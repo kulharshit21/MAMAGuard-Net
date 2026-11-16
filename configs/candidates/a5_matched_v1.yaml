@@ -1,0 +1,13 @@
+experiment: A5_independent_smooth_matched
+status: WAITING_FOR_VALIDATION
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+trainer: nnUNetTrainerMAMAGuardA5V1
+fold: 0
+seed: 20261031
+num_gpus: 1
+save_probabilities: true
+launch_approved: false
+augmentation_parameters: {probability: 0.5, gain_log_std: 0.12, offset_std: 0.05, grid: 4}
+runtime_policy: Parameters are frozen defaults in secondary_trainers_v1; overrides require revalidation.

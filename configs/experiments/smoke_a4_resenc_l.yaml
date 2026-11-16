@@ -1,0 +1,16 @@
+experiment: smoke_A4_resenc_l
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+fold: 0
+trainer: nnUNetTrainerMAMAGuardSmoke
+augmentation: kinetics
+num_gpus: 1
+gpus: [5]
+save_probabilities: false
+seed: 20261031
+augmentation_parameters:
+  probability: 0.5
+  gain_log_std: 0.12
+  offset_std: 0.05
+  field_grid: 4

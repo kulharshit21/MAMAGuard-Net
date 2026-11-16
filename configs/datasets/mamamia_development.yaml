@@ -1,0 +1,12 @@
+name: mamamia_development
+role: development
+root: "${MAMAMIA_ROOT:-/home/faculty/srmist14/MAJOR PROJECT/DATASET}"
+case_manifest: "${MAMAMIA_MANIFEST:-manifests/mamamia_cases.csv}"
+ordered_channels: [pre, post_early, post_late]
+source_names: [DUKE, ISPY1, ISPY2, NACT]
+phase_files: ["*_0000.nii.gz", "*_0001.nii.gz", "*_0002.nii.gz"]
+label_directory: segmentations/expert
+patient_disjoint: true
+holdout_sources: []
+external_test: false
+

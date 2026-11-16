@@ -1,0 +1,14 @@
+name: yunnan_external
+role: locked_external_test
+root: "${YUNNAN_ROOT:-/home/faculty/srmist14/MAJOR PROJECT/DATASET/Breast_Cancer_DCE-MRI_Data/Breast_Cancer_DCE-MRI_Data}"
+record: "Zenodo 8068383"
+expected_archives: 100
+ordered_channels: [pre, post_early, post_late]
+phase_files: [P0.nii.gz, P1.nii.gz, P2.nii.gz]
+label_file: GT.nii.gz
+breast_mask_file: Breast_mask.nii.gz
+extra_phase_policy: record_for_qc_exclude_from_matched_protocol
+external_test: true
+single_use_lock: "runs/external_yunnan.lock.json"
+license_status: "Read from live Zenodo metadata; legal review required before redistribution."
+

@@ -1,0 +1,18 @@
+experiment: A4_kinetics_constrained_primary
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+fold: 0
+trainer: nnUNetTrainerMAMAGuardKinetics
+augmentation: kinetics
+num_gpus: 1
+gpus: [5]
+save_probabilities: true
+seed: 20261031
+augmentation_parameters:
+  probability: 0.5
+  gain_log_std: 0.12
+  offset_std: 0.05
+  field_grid: 4
+scientific_claim: "Positive shared voxelwise affine fields preserve signs of pairwise DCE differences exactly."
+

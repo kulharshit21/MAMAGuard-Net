@@ -1,0 +1,12 @@
+experiment: A2_independent_phase_intensity
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+fold: 0
+trainer: nnUNetTrainerMAMAGuardIndependent
+augmentation: independent
+num_gpus: 1
+gpus: [5]
+save_probabilities: true
+seed: 20261031
+

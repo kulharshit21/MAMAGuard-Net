@@ -1,0 +1,12 @@
+experiment: A7_shuffled_reliability_v1
+status: WAITING_FOR_VALIDATION
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+trainer: nnUNetTrainerMAMAGuardA7V1
+fold: 0
+seed: 20261031
+num_gpus: 1
+save_probabilities: true
+launch_approved: false
+control: Circularly shifted reliability histogram control; nonperiodic seam artifacts and effective perturbation require audit. Historical experiment ID retained.

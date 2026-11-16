@@ -1,0 +1,12 @@
+experiment: B1_subtraction_channel_architecture
+status: planned_not_implemented
+dataset: 501
+configuration: 3d_fullres
+fold: 0
+trainer: nnUNetTrainer
+augmentation: standard
+num_gpus: 4
+gpus: [1, 5, 6, 7]
+input_channels: [pre, post_early, post_late, early_minus_pre, late_minus_early]
+blocker: "Requires deterministic nnU-Net dataset conversion and replanning; do not launch from this config yet."
+

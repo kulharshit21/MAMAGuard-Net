@@ -1,0 +1,15 @@
+experiment: A6_adaptive_input_ordering_v1
+status: WAITING_FOR_VALIDATION
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+trainer: nnUNetTrainerMAMAGuardA6V1
+fold: 0
+seed: 20261031
+num_gpus: 1
+save_probabilities: true
+launch_approved: false
+representation: independently_normalized_network_input
+physical_kinetics_claim: false
+parameters: {probability: 0.5, noise_floor: 0.05, residual_bound: 0.05, gain_bounds: [0.5, 2.0]}
+runtime_policy: Frozen prototype defaults; parameter plumbing and training integration remain pending.

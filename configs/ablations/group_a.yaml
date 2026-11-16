@@ -1,0 +1,16 @@
+group: A
+question: "Does kinetics-preserving augmentation improve robustness over matched intensity policies?"
+fixed:
+  dataset_id: 501
+  configuration: 3d_fullres
+  folds: [0, 1, 2, 3, 4]
+  seeds: [20261031, 20261032, 20261033]
+experiments:
+  - configs/experiments/a0_no_augmentation.yaml
+  - configs/experiments/a1_nnunet_standard.yaml
+  - configs/experiments/a2_independent.yaml
+  - configs/experiments/a3_shared.yaml
+  - configs/experiments/a4_kinetics.yaml
+primary_comparison: A4_kinetics_constrained_primary vs A1_nnunet_standard
+statistics: paired_patient_bootstrap_10000
+

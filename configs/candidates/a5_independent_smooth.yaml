@@ -1,0 +1,21 @@
+experiment: A5_independent_smooth_affine_candidate
+status: WAITING_FOR_APPROVAL
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+folds: [0, 1, 2, 3, 4]
+seed_policy: matched_to_A4
+augmentation: independent_smooth_affine_field
+launch_approved: false
+augmentation_parameters:
+  probability: 0.5
+  gain_log_std: 0.12
+  offset_std: 0.05
+  field_grid: 4
+  interpolation_order: 1
+matched_reference: configs/experiments/a4_kinetics.yaml
+scientific_hypothesis: >-
+  With marginal perturbation strength and spatial smoothness matched to A4, independently sampled
+  phase fields will have different segmentation robustness from one shared field across phases.
+scientific_limit: >-
+  This candidate is not approved for GPU launch and does not itself establish novelty or benefit.

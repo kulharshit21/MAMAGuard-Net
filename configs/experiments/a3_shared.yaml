@@ -1,0 +1,12 @@
+experiment: A3_shared_affine
+dataset: 501
+configuration: 3d_fullres
+plans: nnUNetResEncUNetLPlans
+fold: 0
+trainer: nnUNetTrainerMAMAGuardShared
+augmentation: shared
+num_gpus: 1
+gpus: [5]
+save_probabilities: true
+seed: 20261031
+

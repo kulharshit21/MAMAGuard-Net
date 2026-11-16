@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mamaguardnet"
+version = "0.1.0"
+description = "Leakage-resistant multi-phase breast DCE-MRI segmentation research pipeline"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.12,<2",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+training = [
+  "torch>=2.12,<2.13",
+  "nnunetv2==2.8.1",
+  "monai>=1.6.1,<1.7",
+  "nibabel>=5.2,<6",
+  "SimpleITK>=2.4,<3",
+  "pandas>=2.2,<4",
+  "scikit-learn>=1.5,<2",
+  "tensorboard>=2.18,<3",
+  "psutil>=6,<8",
+]
+analysis = [
+  "captum>=0.7,<0.9",
+  "nibabel>=5.2,<6",
+  "scikit-image>=0.22,<1",
+  "pyvista>=0.44,<1",
+]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "mypy>=1.13,<2"]
+
+[project.scripts]
+mamaguard = "mamaguardnet.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "PLW", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/mamaguardnet/nnunet/trainers.py" = ["B008", "I001"]
+
