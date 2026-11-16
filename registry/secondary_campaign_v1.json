@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "status": "WAITING_FOR_VALIDATION",
+  "artifacts_preserved": false,
+  "scientific_design_approved": false,
+  "gpu_authorized": false,
+  "explicit_campaign_approval": false,
+  "training_smoke_passed": false,
+  "real_data_audit_passed": false,
+  "experiments": [
+    {"id": "A5_independent_smooth_matched", "config": "configs/candidates/a5_matched_v1.yaml", "config_sha256": null, "gpu_count": 1},
+    {"id": "A6_adaptive_input_ordering_v1", "config": "configs/candidates/a6_adaptive_v1.yaml", "config_sha256": null, "gpu_count": 1},
+    {"id": "A7_shuffled_reliability_v1", "config": "configs/candidates/a7_shuffled_v1.yaml", "config_sha256": null, "gpu_count": 1}
+  ]
+}

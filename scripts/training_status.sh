@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u -o pipefail
 
-RESULTS_ROOT="${nnUNet_results:-/home/faculty/srmist14/MAJOR PROJECT/nnUNet_results}"
+RESULTS_ROOT="${nnUNet_results:-$PWD/nnUNet_results}"
 MAX_LOG_AGE_SECONDS="${MAMAGUARD_STATUS_MAX_AGE:-900}"
 
 EXPERIMENTS=(A0_no_augmentation A1_nnunet_standard A2_independent_phase_intensity A3_shared_affine A4_kinetics_constrained_primary)
@@ -67,6 +67,6 @@ nvidia-smi --query-gpu=index,utilization.gpu,memory.used,memory.free,temperature
 
 echo
 echo "===== STORAGE AND RAM ====="
-df -h "/home/faculty/srmist14/MAJOR PROJECT" | tail -n 1
+df -h "$RESULTS_ROOT" | tail -n 1
 free -h | sed -n '1,2p'
 exit "$overall"

@@ -1,6 +1,6 @@
 name: yunnan_external
 role: locked_external_test
-root: "${YUNNAN_ROOT:-/home/faculty/srmist14/MAJOR PROJECT/DATASET/Breast_Cancer_DCE-MRI_Data/Breast_Cancer_DCE-MRI_Data}"
+root: "${YUNNAN_ROOT:-data/yunnan}"
 record: "Zenodo 8068383"
 expected_archives: 100
 ordered_channels: [pre, post_early, post_late]

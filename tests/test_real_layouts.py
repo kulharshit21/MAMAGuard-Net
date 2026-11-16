@@ -13,7 +13,7 @@ def touch(path: Path, data: bytes = b"nifti") -> Path:
 
 
 def test_verified_layouts_build_manifests_and_stage_only_development(tmp_path: Path):
-    case_id = "DUKE_001"
+    case_id = "SYNTHETIC_CASE_ALPHA"
     case_dir = tmp_path / "images" / case_id
     for index in range(4):
         touch(case_dir / f"{case_id}_{index:04d}.nii.gz")

@@ -7,7 +7,7 @@ def test_nnunet_summary_reports_patient_distribution_sources_and_missing_metrics
     summary = {
         "metric_per_case": [
             {
-                "prediction_file": "/pred/DUKE_001.nii.gz",
+                "prediction_file": "/pred/SYNTHETIC_CASE_ALPHA.nii.gz",
                 "metrics": {
                     "1": {
                         "Dice": 0.2,
@@ -20,7 +20,7 @@ def test_nnunet_summary_reports_patient_distribution_sources_and_missing_metrics
                 },
             },
             {
-                "prediction_file": "/pred/ISPY1_002.nii.gz",
+                "prediction_file": "/pred/SYNTHETIC_CASE_BETA.nii.gz",
                 "metrics": {
                     "1": {
                         "Dice": 0.8,
@@ -35,10 +35,10 @@ def test_nnunet_summary_reports_patient_distribution_sources_and_missing_metrics
         ]
     }
     manifest = {
-        "DUKE_001": {"patient_id": "DUKE_001", "source": "DUKE"},
-        "ISPY1_002": {"patient_id": "ISPY1_002", "source": "ISPY1"},
+        "SYNTHETIC_CASE_ALPHA": {"patient_id": "SYNTHETIC_CASE_ALPHA", "source": "DUKE"},
+        "SYNTHETIC_CASE_BETA": {"patient_id": "SYNTHETIC_CASE_BETA", "source": "ISPY1"},
     }
-    report = summarize_nnunet_validation(summary, manifest, ["DUKE_001", "ISPY1_002"])
+    report = summarize_nnunet_validation(summary, manifest, ["SYNTHETIC_CASE_ALPHA", "SYNTHETIC_CASE_BETA"])
     assert report["coverage"]["complete"] is True
     assert report["overall"]["metrics"]["dice"]["mean"] == pytest.approx(0.5)
     assert report["overall"]["metrics"]["dice"]["p10"] == pytest.approx(0.26)

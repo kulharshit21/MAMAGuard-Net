@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE="/home/faculty/srmist14/MAJOR PROJECT"
-REPO="$BASE/MAMAGuardNet"
-SOURCE="${MAMAGUARD_SOURCE:-$REPO/post_review_staging/source_v9}"
-PY="$REPO/.venv/bin/python"
-RESULTS="$BASE/nnUNet_results"
-PREPROCESSED="$BASE/nnUNet_preprocessed"
-TARGET="$BASE/nnUNet_raw/Dataset501_MAMAMIA3Phase/labelsTr"
+BASE="${MAMAGUARD_BASE:-$PWD}"
+REPO="${MAMAGUARD_REPO:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)}"
+SOURCE="${MAMAGUARD_SOURCE:-$REPO}"
+PY="${MAMAGUARD_PYTHON:-$(command -v python3)}"
+RESULTS="${nnUNet_results:-$BASE/nnUNet_results}"
+PREPROCESSED="${nnUNet_preprocessed:-$BASE/nnUNet_preprocessed}"
+TARGET="${nnUNet_raw:-$BASE/nnUNet_raw}/Dataset501_MAMAMIA3Phase/labelsTr"
 WORKERS="${MAMAGUARD_CPU_WORKERS:-8}"
 [[ "$WORKERS" =~ ^[1-9][0-9]*$ ]] && (( WORKERS <= $(nproc) ))
 test -x "$PY"
@@ -18,7 +18,9 @@ cd "$SOURCE"
 export PYTHONPATH="$SOURCE/src" CUDA_VISIBLE_DEVICES=''
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 
-OUT=$(mktemp -d "$REPO/reports/generated/primary_physical_XXXXXXXX")
+REPORT_DIR="${MAMAGUARD_REPORT_DIR:-$REPO/reports/generated}"
+mkdir -p -- "$REPORT_DIR"
+OUT=$(mktemp -d "$REPORT_DIR/primary_physical_XXXXXXXX")
 printf 'Output directory: %s\n' "$OUT"
 exec > >(tee -a "$OUT/run.log") 2>&1
 configs=()

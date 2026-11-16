@@ -1,6 +1,6 @@
 name: mamamia_development
 role: development
-root: "${MAMAMIA_ROOT:-/home/faculty/srmist14/MAJOR PROJECT/DATASET}"
+root: "${MAMAMIA_ROOT:-data/mamamia}"
 case_manifest: "${MAMAMIA_MANIFEST:-manifests/mamamia_cases.csv}"
 ordered_channels: [pre, post_early, post_late]
 source_names: [DUKE, ISPY1, ISPY2, NACT]

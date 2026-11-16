@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DATA_ROOT="${MAMAGUARD_DATA_ROOT:-/home/faculty/srmist14/MAJOR PROJECT/DATASET}"
+DATA_ROOT="${MAMAGUARD_DATA_ROOT:-$PWD/data}"
 ARCHIVE="${MAMAGUARD_BREAST_ARCHIVE:-$DATA_ROOT/downloads/Breast_Cancer_DCE-MRI_Data.7z}"
 OUTPUT="${MAMAGUARD_BREAST_ROOT:-$DATA_ROOT/Breast_Cancer_DCE-MRI_Data}"
 REPORT_DIR="${MAMAGUARD_REPORT_DIR:-$PWD/reports/generated}"
