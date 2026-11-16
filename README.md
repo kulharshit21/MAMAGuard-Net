@@ -29,7 +29,7 @@ Research code for a five-fold comparison of augmentation strategies in three-pha
 
 The 25 final checkpoints, nnU-Net plans, dataset descriptors and SHA-256 manifest are pinned at https://huggingface.co/harshitrk07/MAMAGuard-Net/tree/4e8d231c3ad821be90be8b5c30b329a658c26d59. Choose the experiment and fold needed. Use checkpoint_final.pth with the matching model directory and custom trainer. The checkpoints represent internal evaluation only.
 
-This private source snapshot grants access to invited collaborators. No reusable code or weights licence has been declared. Third-party software and the source dataset retain their respective terms. Participant-level manifests, predictions and MRI files are excluded. The independent Yunnan cohort was not used in the manuscript evaluation.
+This private source snapshot grants access to invited collaborators. The [MIT licence](LICENSE) covers the authors' original software code and its accompanying software documentation. It does not cover experiment configurations, datasets, checkpoints, derived research artifacts, manuscript materials, or third-party components. The source dataset and third-party components retain their respective terms. Participant-level manifests, predictions and MRI files are excluded. The independent Yunnan cohort was not used in the manuscript evaluation.
 
 The corresponding author is Harshit Ravindra Kulkarni. Please cite the manuscript and the pinned artifact revision when referring to this work.
 
